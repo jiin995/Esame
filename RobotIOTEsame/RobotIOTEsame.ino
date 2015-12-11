@@ -2,10 +2,12 @@
           Definition
           of MAIN
  *************************************/
+ 
 #include "define.h"
 #include "Motor.h"
 #include "ultrasound.h"
 #include "espmqtt.h"
+#include <dht11.h>
 
 using namespace arduino_web_car;
 
@@ -16,18 +18,25 @@ motor motorbl (DIR_A_BL,DIR_B_BL,PWM_BL);
 motor motorbr (DIR_A_BR,DIR_B_BR,PWM_BR);
 
 ultrasound ultrasoundF(ECHO_F,TRIG_F);
+ultrasound ultrasoundB(ECHO_B,TRIG_B);
 
-int globalGas=125;
+bool ledstate=false;
+
+dht11 DHT;
+
+int globalGas=50;
 
 //Object initialization for communication with the ArduinoDisplay
 SoftwareSerial displaySerial =  SoftwareSerial(rxPin, txPin);
 
 void setup()
   {
+      
       Serial.begin(9600);
       pinSetup();
       displaySerial.begin(9600);
       displaySerial.println("/C");
+      delay(100);
       displaySerial.println("/L");
       espm.wifiConnect();
         delay(1000);
@@ -51,8 +60,9 @@ void loop()
            case 'T':{
                         delay(100);
                         char *d=convertmessage(cm);
+                        checkcommand(d);
                         Serial.println(d);
-                        displaySerial.println(d);
+                        //displaySerial.println(d);
                         break;
                      }
 
@@ -67,12 +77,12 @@ void loop()
                      }
 
            case 'S':{
-                        go_left(motorfl,motorfr,motorbr,motorbl);
+                        go_left(motorfl,motorfr,motorbl,motorbr);
                         break;
                      }
 
            case 'D':{
-                        go_right(motorfl,motorfr,motorbr,motorbl);
+                        go_right(motorfl,motorfr,motorbl,motorbr);
                         break;
                      }
 
@@ -81,21 +91,46 @@ void loop()
                          break;
                      }
 
-           case 'G':{
-                         globalGas+=10;
+           case 'G':{     
+                         if((globalGas<MAXGAS)&&(globalGas>MINGAS))
+                            globalGas+=10;
                          set_gas(motorfl,motorfr,motorbr,motorbl,globalGas);
                          break;
                      }
 
-           case 'g':{
-                         globalGas-=10;
+           case 'g':{ 
+                         if((globalGas<MAXGAS)&&(globalGas>MINGAS))
+                            globalGas-=10;
                          set_gas(motorfl,motorfr,motorbr,motorbl,globalGas);
                          break;
                      }
            case 'r':{
+                        int front=ultrasoundF.getDistance();
+                        int back=ultrasoundB.getDistance();
+                          DHT.read(DHT11_PIN);
+                        int temp=DHT.temperature;
+                        Serial.println(temp);
+                          espm.publish("sensorfront",String(front));
+                          espm.publish("sensorback","ciao");
+                          espm.publish("temp",String(temp));
                         Serial.println(ultrasoundF.getDistance());
                         break;
                      }
+           case 'l':{  
+                      
+                        if(ledstate)
+                          {
+                            digitalWrite(LED,LOW);
+                            ledstate=false;
+                          }
+                        else 
+                          {
+                            ledstate=true;
+                            digitalWrite(LED,HIGH);
+                          }
+                         break;              
+                      }
+              
         }
-      delay(100);
+      delay(50);
   }

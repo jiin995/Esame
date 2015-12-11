@@ -11,6 +11,8 @@
 
 #ifndef MOTOR_H_
 #define MOTOR_H_
+#define MAXGAS 255
+#define MINGAS 50
 
 namespace arduino_web_car
   {
@@ -18,8 +20,8 @@ namespace arduino_web_car
 
 	     class motor {
          //ENUM TYPES and MEMBER CONSTANTS
-           int static const mingas=125;
-           int static const maxgas=255;
+           int static const mingas=MINGAS;
+           int static const maxgas=MAXGAS;
 	             public:
 		              //COSTRUCTOR and DESTRUCTOR
 		                motor(const int& initial_DIR_A, const int& initial_DIR_B, const int& initial_PWM,  int initial_gas=mingas);
@@ -38,7 +40,7 @@ namespace arduino_web_car
 		                stat state;
 		              //CONTROL PINS
 		                int DIR_A, DIR_B;
-		                int PWM
+		                int PWM;
           }; //END CLASS DEFINITION
 
 //Functions for controll four motors at the same time

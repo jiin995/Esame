@@ -6,6 +6,9 @@
 #include "Motor.h"
 #include "Arduino.h"
 
+#define LEFTARROW 40
+#define RIGHTARROW 41
+
 namespace arduino_web_car
 	{
 			//Start class implementation
@@ -91,6 +94,8 @@ namespace arduino_web_car
             		fr.go_forwards();
             		br.go_forwards();
             		bl.go_forwards();
+                digitalWrite(40,LOW);
+                digitalWrite(41,LOW);
         }
 
       void go_backwards(motor fl,motor fr,motor br,motor bl)
@@ -99,6 +104,8 @@ namespace arduino_web_car
             		fr.go_backwards();
             		br.go_backwards();
             		bl.go_backwards();
+                digitalWrite(LEFTARROW,LOW);
+                digitalWrite(RIGHTARROW,LOW);
         }
 
         void stop (motor fl,motor fr,motor br,motor bl)
@@ -107,6 +114,8 @@ namespace arduino_web_car
             		fr.stop();
             		bl.stop();
             		br.stop();
+                digitalWrite(LEFTARROW,LOW);
+                digitalWrite(RIGHTARROW,LOW);
         }
 
         void go_left (motor fl,motor fr,motor br,motor bl)
@@ -115,6 +124,8 @@ namespace arduino_web_car
             		bl.go_forwards();
             		fr.go_backwards();
             		br.go_backwards();
+                digitalWrite(LEFTARROW,HIGH);
+                digitalWrite(RIGHTARROW,LOW);
         }
 
         void go_right(motor fl,motor fr,motor br,motor bl)
@@ -123,6 +134,8 @@ namespace arduino_web_car
             		br.go_forwards();
             		fl.go_backwards();
             		bl.go_backwards();
+                digitalWrite(RIGHTARROW,HIGH);
+                digitalWrite(LEFTARROW,LOW);
         }
 
         void set_gas (motor fl,motor fr,motor br,motor bl,int g)

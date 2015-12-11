@@ -11,7 +11,7 @@
     that occur on the cables that connect the two devices
 ***********************************************************************/
 
-#include <SoftwareSerial.h>
+#include "SoftwareSerial.h"
 #include "Arduino.h"
 #ifndef ESPMQTT
 #define ESPMQTT
@@ -32,8 +32,8 @@ namespace arduino_web_car
         int port=1883;
     public :
       //visuallizzazione stato nel monitor seriale
-        void wifiSettings () const;
-        void mqttSettings() const;
+        void wifiSettings ();
+        void mqttSettings();
         void checkStatus();
 
       //construttore e distruttore

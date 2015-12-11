@@ -6,10 +6,10 @@
 
 void menu()
   {
+      index();
       boolean exit=false;
       while(!exit)
         {
-            index();
             int r=0;  //support variable to see the number of input
             if(Serial.available())
               {
@@ -65,55 +65,55 @@ void menu()
                                       char character;
                                       while(r<5)
                                         {
-                                          input="";
-                                          while(Serial.available())
-                                            {
-                                                character = Serial.read();
-                      case 'E':  {
-                                      Serial.println("Exit");
-                                              }
-                                          if(input=="D")
-                                            {
-                                                Serial.println("Default");
-                                                r=5;
-                                            }
-                                          else
-                                            if((r<1)&&(input.length()>0))
+                                            input="";
+                                            while(Serial.available())
                                               {
-                                                client=input;
-                                                r++;
+                                                  character = Serial.read();
+                                                  input.concat(character);
+                                                  delay(20); 
+                                              }
+                                            if(input=="D")
+                                              {
+                                                  Serial.println("Default");
+                                                  r=5;
                                               }
                                             else
-                                              if((r<2)&&(input.length()>0))
+                                              if((r<1)&&(input.length()>0))
                                                 {
-                                                  user=input;
-                                                  r++;
+                                                    client=input;
+                                                    r++;
                                                 }
                                               else
-                                                if((r<3)&&(input.length()>0))
+                                                if((r<2)&&(input.length()>0))
                                                   {
-                                                    pass=input;
-                                                    r++;
+                                                      user=input;
+                                                      r++;
                                                   }
                                                 else
-                                                  if((r<4)&&(input.length()>0))
+                                                  if((r<3)&&(input.length()>0))
                                                     {
-                                                      broker=input;
-                                                      r++;
+                                                        pass=input;
+                                                        r++;
                                                     }
                                                   else
-                                                    if((r<5)&&(input.length()>0))
+                                                    if((r<4)&&(input.length()>0))
                                                       {
-                                                        port=input.toInt();
-                                                        r++;
+                                                          broker=input;
+                                                          r++;
                                                       }
-                                        }
-                                      if((client!="")&&(pass!="")&&(user!="")&&(broker!="")&&(port>0))
-                                        espm.setConnectMqtt(client,user ,pass ,broker,port);
-                                      espm.connectMqtt();
-                                      espm.checkStatus();
-                                      break;
-                                  }//END mqtt settings case
+                                                    else
+                                                      if((r<5)&&(input.length()>0))
+                                                        {
+                                                            port=input.toInt();
+                                                            r++;
+                                                        }  
+                                    }
+                                    if((client!="")&&(pass!="")&&(user!="")&&(broker!="")&&(port>0))
+                                      espm.setConnectMqtt(client,user ,pass ,broker,port);
+                                    espm.connectMqtt();
+                                    espm.checkStatus();
+                                    break;
+                              }//END mqtt settings case
                         case 'S':  {
                                       String input;
                                       char character;
@@ -142,7 +142,7 @@ void menu()
                                       break;
                                   }
                         default:{
-                                    Serial.println("Comando errato prego riprovare")
+                                    Serial.println("Comando errato prego riprovare");
                                 }
                     }//END CASE
               }// END if

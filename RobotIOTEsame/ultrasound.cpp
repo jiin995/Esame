@@ -8,13 +8,13 @@
 namespace arduino_web_car
 {
 
-  ultrasound::ultrasound(int eP,int tP);
+  ultrasound::ultrasound(int eP,int tP)
 
     {
-        if(ec!=tr)
+        if(eP!=tP)
           {
-              echo=eP;
-              trigger=tP;
+              echoPort=eP;
+              triggerPort=tP;
           }
     }
 

@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/s"
+        android:id="@+id/avanti"
+        android:onClick="avantiOnclick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sinistra"
+        android:onClick="sinistraOnclick"
+        android:id="@+id/sinistra"
+        android:layout_marginTop="120dp"
+        android:layout_toStartOf="@+id/avanti" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destra"
+        android:onClick="destraOnclick"
+        android:id="@+id/destra"
+        android:layout_alignTop="@+id/stop"
+        android:layout_toEndOf="@+id/stop" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Indietro"
+        android:onClick="indietroOnclick"
+        android:id="@+id/indietro"
+        android:layout_toEndOf="@+id/sinistra"
+        android:layout_marginTop="190dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ultimo comando:"
+        android:id="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/ComandText"
+        android:layout_marginStart="19dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:onClick="stopOnclick"
+        android:id="@+id/stop"
+        android:layout_alignTop="@+id/sinistra"
+        android:layout_centerHorizontal="true"
+        android:background="#e60e0e" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gaspiù"
+        android:maxWidth="40dp"
+        android:minWidth="40dp"
+        android:minHeight="48dp"
+        android:text="Gas +"
+        android:onClick="gaspiùOnclick"
+        android:layout_alignStart="@+id/sinistra"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginRight="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gasmeno"
+        android:maxWidth="40dp"
+        android:minWidth="40dp"
+        android:minHeight="48dp"
+        android:text="Gas -"
+        android:onClick="gasmenoOnclick"
+        android:layout_marginTop="190dp"
+        android:layout_alignEnd="@id/destra"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED"
+        android:id="@+id/led"
+        android:onClick="ledOnClick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp" />
+
+
+
+
+
+</RelativeLayout>

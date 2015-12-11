@@ -81,7 +81,7 @@ namespace arduino_web_car
         if(readcom)
             return c[0];
         else
-            return "0";
+            return '0';
     }
 
   void espmqtt::setConnectMqtt(String client,String user ,String password ,String broke,int por)
@@ -112,7 +112,7 @@ namespace arduino_web_car
 
   void espmqtt::publish(String topic,String message) const
     {
-        sendtoesp("mqttPublish('iot-2/evt/"+topic+"/fmt/+','"+message+"'");
+        sendtoesp("mqttPublish('iot-2/evt/"+topic+"/fmt/json','"+message+"')");
     }
 
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Temperatura"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/sensoretemperatura"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ValoreTemperatura"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/message" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ValoreTemperatura"
+        android:text="0"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:text=""
+        android:hint="Scrivi quello che vuoi max 100 caratteri"
+        android:layout_above="@+id/inviamessaggio"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invia"
+        android:onClick="msgOnclick"
+        android:id="@+id/inviamessaggio"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/ValoreTemperatura" />
+
+</RelativeLayout>
