@@ -4,8 +4,8 @@
  *************************************/
 
  /*********************************************************************
-    This library was created for controll ultrasound of robot.
-    In particular the library work for HC-SR04 ultrasonic sensors
+    This library was created for checking the ultrasounds that the robot could recive.
+    Particularly the library works with HC-SR04 ultrasonic sensors
     or similiary
  ***********************************************************************/
 
