@@ -43,7 +43,7 @@ namespace arduino_web_car
 		                int PWM;
           }; //END CLASS DEFINITION
 
-//Functions for controll four motors at the same time
+//Functions for controlling four motors at the same time
         void stop (motor fl,motor fr,motor br,motor bl);
         void go_forwards(motor fl,motor fr,motor br,motor bl);
         void go_backwards(motor fl,motor fr,motor br,motor bl);
