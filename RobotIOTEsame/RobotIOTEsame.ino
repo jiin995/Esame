@@ -26,7 +26,7 @@ dht11 DHT;
 
 int globalGas=50;
 
-//Object initialization for communication with the ArduinoDisplay
+//Object initialization to communicate with the ArduinoDisplay
 SoftwareSerial displaySerial =  SoftwareSerial(rxPin, txPin);
 
 void setup()
