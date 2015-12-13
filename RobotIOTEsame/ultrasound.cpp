@@ -22,7 +22,7 @@ namespace arduino_web_car
       {
           digitalWrite( triggerPort, LOW );
           digitalWrite( triggerPort, HIGH );
-            delayMicroseconds( 20 );
+          delayMicroseconds( 20 );
           digitalWrite( triggerPort, LOW );
 
           long durata = pulseIn( echoPort, HIGH );
