@@ -7,7 +7,7 @@
 
 #include "Arduino.h"
 
-//Connssione secondo arduino
+//Connessione secondo arduino
 #define rxPin 15      //txpin 0 altro arduino
 #define txPin 14      //rxpin 1 altro arduino
 //Connessione ESP8266
