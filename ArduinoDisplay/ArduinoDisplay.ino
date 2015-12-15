@@ -88,7 +88,7 @@ void loop()
                                     		display.setCursor(0,0);
 		                                    printtext("/wSviluppato da:       Gabriele Previtera,");
 		                                    printtext("/w Saverio Milo ,      ");
-        		                            printtext("/wMichele Pommella,    Alessandro Pozziello,");
+        		                            printtext("/wMichele Pommella,    Alessandro Poziello,");
                 		                    printtext("/w Con l'aiuto di          Paolo Maresca");
                         		            break;
                             			}
