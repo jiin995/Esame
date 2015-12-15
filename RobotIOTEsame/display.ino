@@ -9,7 +9,13 @@ void checkcommand(char *input)
         else
           if(c=="/w/S")
             displaySerial.println("/S");
-          else  
-            displaySerial.println(input);
+           else
+            if(c=="/w/T")
+              displaySerial.println("/T");
+            else
+             if(c=="/w/t")
+              displaySerial.println("/t");
+             else  
+              displaySerial.println(input);
+            
   }
-

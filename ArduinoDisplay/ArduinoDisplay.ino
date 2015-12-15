@@ -77,7 +77,7 @@ void loop()
                             			
                     			// Diminuzione dimensione testo
                     			case 't':{
-                                    		sizetext++;
+                                    		sizetext--;
 		                                    display.setTextSize(sizetext);
         		                            break;
                 			            }
