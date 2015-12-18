@@ -5,7 +5,7 @@
 
  /*********************************************************************
     This library was created for checking the ultrasounds that the robot could recive.
-    Particularly the library works with HC-SR04 ultrasonic sensors
+    Particularly this library works with HC-SR04 ultrasonic sensors
     or similiary
  ***********************************************************************/
 
