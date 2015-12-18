@@ -5,7 +5,7 @@
 
  /*********************************************************************
     This library was created for controll motor of robot.
-    In particular the library work for L298N Driver or similiary
+    This type of library works for L298N Driver or similiary
     motor drive.
  ***********************************************************************/
 
