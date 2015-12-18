@@ -4,7 +4,7 @@
  *************************************/
 
  /*********************************************************************
-    Note:The esp send message from Arduino through the SoftwareSerial
+    Note:The esp send messages from Arduino through the SoftwareSerial
     and the message comes in the form of characters in particular
     the message will be of the type " [ (message) ] "
     brackets are used to suppress the reception of any interference
