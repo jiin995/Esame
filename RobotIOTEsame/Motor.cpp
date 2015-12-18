@@ -41,7 +41,7 @@ namespace arduino_web_car
 								state=on;
 				}
 
-      void motor::go_forwards()
+      			void motor::go_forwards()
 				{
 								digitalWrite(DIR_A,HIGH);
 								digitalWrite(DIR_B,LOW);
