@@ -86,7 +86,7 @@ namespace arduino_web_car
 
 			//END class implementation
 
-			//Begin implementing the controll of four motors at the same time
+			//First operation is implementing the controll of four motors at the same time
 
     	void go_forwards(motor fl,motor fr,motor br,motor bl)
         {
