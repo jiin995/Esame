@@ -18,7 +18,7 @@
 #define DIR_A_FR 23   //Motore frontale destro
 #define DIR_B_FR 22
 #define PWM_FR 13
-#define DIR_A_FL 25//Motore frontale sinistro
+#define DIR_A_FL 25   //Motore frontale sinistro
 #define DIR_B_FL 24
 #define PWM_FL 12
 #define DIR_A_BL 26   //Motore posteriore sinistro
@@ -35,7 +35,6 @@
 #define TRIG_B 32
 #define DHT11_PIN 31
 #define LED 32
-
 
 //Pin Settings
 
