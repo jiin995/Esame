@@ -4,7 +4,7 @@
  *************************************/
 
  /*********************************************************************
-    This library was created for controll motor of robot.
+    This library was created for controling the robot's motor.
     This type of library works for L298N Driver or similiary
     motor drive.
  ***********************************************************************/
@@ -34,16 +34,16 @@ namespace arduino_web_car
 		                void stop();
 		                void set_gas(int gas_supplied);
 		              //CONSTANT MEMBER FUNCTIONS
-		                stat get_status() const;	//get status and speed
+		                stat get_status() const;	//Ricevo lo stato e la velocità/Get status and speed
 	            private:
 		                int gas;
 		                stat state;
 		              //CONTROL PINS
 		                int DIR_A, DIR_B;
 		                int PWM;
-          }; //END CLASS DEFINITION
+        	 }; //END CLASS DEFINITION
 
-//Functions for controlling four motors at the same time
+//Funzioni per controllare i quattro motori contemporaneamente/Functions for controlling four motors at the same time
         void stop (motor fl,motor fr,motor br,motor bl);
         void go_forwards(motor fl,motor fr,motor br,motor bl);
         void go_backwards(motor fl,motor fr,motor br,motor bl);
