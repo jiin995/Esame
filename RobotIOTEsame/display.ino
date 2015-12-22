@@ -1,3 +1,9 @@
+/*************************************
+          Definition
+          of the robot's display using
+          adafruit technies
+ *************************************/
+
 void checkcommand(char *input)
   {
       String c=input;
