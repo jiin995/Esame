@@ -31,32 +31,32 @@ namespace arduino_web_car
         String topic="cmd1";
         int port=1883;
     public :
-      //visuallizzazione stato nel monitor seriale
+      //visualizzazione stato nel monitor seriale /showing the state of serial monitor
         void wifiSettings ();
         void mqttSettings();
         void checkStatus();
 
-      //construttore e distruttore
+      //COSTRUTTORE e DISTRUTTORE/COSTRUCTOR and DESTRUCTOR
         espmqtt(const int rxin,const int txin);
         ~espmqtt();
 
-      //connessione wifi
+      //connessione WI-FI/WI-FI connection
         void wifiConnect ();
         void wifiConnect (String ssid,String password);
 
         char recivechar();
-      //ricezione comando da ESP8266
+      //ricezione comando da ESP8266/catching input from ESP8266
         String recive();
-      //impostazione connessione mqtt
+      //impostazione connessione mqtt/connection mqtt settings
         void setConnectMqtt(String client,String user ,String password ,String broke,int por);
-      //connessione mqtt
+      //connessione mqtt/mqtt connection
         void connectMqtt() const;
-      //impostazione sub topic sull'ESP8266
+      //impostazione sub topic sull'ESP8266/ESP8266 sub topic settings
         void setSubscribe(String topic);
         void setSubscribe() const;
-      //pubblica un messaggio su un determinato topic
+      //pubblica un messaggio su un determinato topic/show a message about a specific topic
         void publish(String topic,String message) const;
-      //invia comandi all'ESP8266 tramite seriale
+      //invia comandi all'ESP8266 tramite seriale/throwing serial input to ESP8266
         void sendtoesp(String message) const;
   };
 
@@ -64,6 +64,10 @@ namespace arduino_web_car
     Elimina la coppia di parentesi presenti nel messaggio e aggiunge il comando
     per l'arduino dedicato alla stampa del tel testo sul display
     vedere ArduinoDisplay
+    /
+    Delete the brackets of the message and add a print command for the display on the
+    dedicated arduino.
+    Refering ArduinoDisplay
 */
   char *convertmessage(String d);
 }
