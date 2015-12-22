@@ -72,7 +72,7 @@ namespace arduino_web_car
 								state=arrest;
 				}
 
-			stat motor::get_status()const
+			void motor::get_status()const
 				{
 								Serial.print("Velocità: ");
 								Serial.println(gas);

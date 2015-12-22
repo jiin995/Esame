@@ -34,7 +34,7 @@ namespace arduino_web_car
 		                void stop();
 		                void set_gas(int gas_supplied);
 		              //CONSTANT MEMBER FUNCTIONS
-		                stat get_status() const;	//Ricevo lo stato e la velocità/Get status and speed
+		                void get_status() const;	//Ricevo lo stato e la velocità/Get status and speed
 	            private:
 		                int gas;
 		                stat state;
