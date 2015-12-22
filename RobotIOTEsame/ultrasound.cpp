@@ -28,7 +28,7 @@ namespace arduino_web_car
           long durata = pulseIn( echoPort, HIGH );
           long r = 0.034 * durata / 2;
 
-          if( durata > 38000 ) //Distanza fuori dalla rilevazione
+          if( durata > 38000 ) //Distanza fuori dalla rilevazione/sounds too far away from the sensor
               return -1;
           else
               return r ;
